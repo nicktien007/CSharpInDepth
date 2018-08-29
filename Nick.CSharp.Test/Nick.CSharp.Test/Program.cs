@@ -14,14 +14,30 @@ namespace Nick.CSharp.Test
             //Func<int, int, string> func = (x, y) => (x * y).ToString();
             //Console.WriteLine(func(5,20));
 
-            var a = new {Name = "a", Age = 29};
-            var b = new {Name = "b", Age = 88};
+            //var a = new {Name = "a", Age = 29};
+            //var b = new {Name = "b", Age = 88};
 
-            var c = new { Name = "b", Age = 88,Height=178 };
+            //var c = new { Name = "b", Age = 88,Height=178 };
+
+            //Console.WriteLine(a.GetType());
+            //Console.WriteLine(b.GetType());
+            //Console.WriteLine(c.GetType());
+
+            IntHolder y = new IntHolder();
+            y.i = 5;
+            Foo( y);
             
-            Console.WriteLine(a.GetType());
-            Console.WriteLine(b.GetType());
-            Console.WriteLine(c.GetType());
+            Console.WriteLine(y.i);
+        }
+        static void Foo( IntHolder x)
+        {
+            x = new IntHolder();
+            //x = null;
+            //x.i = 99999;
+        }
+        public class IntHolder
+        {
+            public int i;
         }
     }
 }

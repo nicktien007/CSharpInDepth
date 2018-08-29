@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nick.CSharp.Test", "Nick.CSharp.Test\Nick.CSharp.Test.csproj", "{87DB23DB-6193-426E-912D-27DBC786E134}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nick.CSharp.Chapter3dash2", "Nick.CSharp.Chapter3\Nick.CSharp.Chapter3dash2.csproj", "{99AD874F-A181-4CCA-89B6-1C81E101B8B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nick.CSharp.Chapter3", "Nick.CSharp.Chapter3\Nick.CSharp.Chapter3.csproj", "{99AD874F-A181-4CCA-89B6-1C81E101B8B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
