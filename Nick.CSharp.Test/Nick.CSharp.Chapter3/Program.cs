@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -83,6 +84,50 @@ namespace Nick.CSharp.Chapter3
             }
         }
 
+
+        /// <summary>
+        /// 3-10
+        /// </summary>
+        class ContingEnumerable:IEnumerable<int>
+        {
+            public IEnumerator<int> GetEnumerator()
+            {
+                return new ContingEnumerator();
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return GetEnumerator();
+            }
+        }
+
+        class ContingEnumerator:IEnumerator<int>
+        {
+            private int _current = -1;
+
+            public void Dispose()
+            {
+            }
+
+            public bool MoveNext()
+            {
+                _current++;
+                return _current < 10;
+            }
+
+            public void Reset()
+            {
+                _current = -1;
+            }
+
+            public int Current
+            {
+                get { return _current; }
+            }
+
+            object IEnumerator.Current => Current;
+        }
+
         static void Main(string[] args)
         {
             //3-2 p60
@@ -110,13 +155,22 @@ namespace Nick.CSharp.Chapter3
             //Pair<int, string> pair2 = new Pair<int, string>(10, "value");
 
             //3-7，更好的用法
-            Pair<int, string> pair3 = Pair.Of(10, "value");
-            Pair<int, string> pair4 = Pair.Of(10, "value");
+            //Pair<int, string> pair3 = Pair.Of(10, "value");
+            //Pair<int, string> pair4 = Pair.Of(10, "value");
 
 
             //var result = pair1.Equals(pair2);
-            var result = pair3.Equals(pair4);
-            Console.WriteLine(result);
+            //var result = pair3.Equals(pair4);
+            //Console.WriteLine(result);
+
+
+
+            //3-10
+            ContingEnumerable counter = new ContingEnumerable();
+            foreach (int x in counter)
+            {
+                Console.WriteLine(x);
+            }
 
         }
     }
