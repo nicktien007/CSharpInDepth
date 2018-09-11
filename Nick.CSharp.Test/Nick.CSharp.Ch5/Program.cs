@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,16 +25,32 @@ namespace Nick.CSharp.Ch5
         static void Main(string[] args)
         {
             //5-3
-            StreamFactory factory = GererateSampleData;
+            //StreamFactory factory = GererateSampleData;
 
-            using (Stream stream = factory())
+            //using (Stream stream = factory())
+            //{
+            //    int data;
+            //    while ((data = stream.ReadByte())!=-1)
+            //    {
+            //        Console.WriteLine(data);
+            //    }
+            //}
+
+
+
+            //Test
+            var qoo = "Qoo";
+            Action x = delegate()
             {
-                int data;
-                while ((data = stream.ReadByte())!=-1)
-                {
-                    Console.WriteLine(data);
-                }
-            }
+                Console.WriteLine(qoo);
+                qoo = "change by x";
+            };
+            qoo = "跑X之前";
+            x();
+            Console.WriteLine(qoo);
+
+            qoo = "跑X之後";
+            x();
         }
     }
 }
